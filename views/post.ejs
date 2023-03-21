@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/wibsite#">
+    <%- include("./_share/inhead") %>
+    <link rel="stylesheet" href="/public/stylesheet/post/post.css">
+    <script src="/public/javascript/post/post.js" async></script>
+</head>
+
+<body>
+    <%- include("./_share/nav", {downurl:1}) %>
+    <section>
+        <form action="/post" method="POST">
+            <div class="field">
+                <label>題名</label>
+                <p class="txtcounter" id="oftitle">0/30文字</p>
+                <div class="control">
+                    <input class="input" maxlength="30" type="text" name="title" placeholder="30字まで。" id="title" onkeyup="KeyUP(this);"></input>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label>思い</label>
+                    <div class="select">
+                        <select name="emo">
+                            <option value="ki">嬉しかった</option>
+                            <option value="do">怒った</option>
+                            <option value="ai">哀しかった</option>
+                            <option value="rk">楽しかった</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label>本文</label>
+                <p class="txtcounter" id="ofmain">0/1200文字</p>
+                <div class="control">
+                    <textarea class="textarea" maxlength="1200" rows="10" name="main" placeholder="1200字まで。" id="main" onkeyup="KeyUP(this);"></textarea>
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button type="submit" class="button is-link">伝える</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <%- include("./_share/footer") %>
+</body>
+
+</html>

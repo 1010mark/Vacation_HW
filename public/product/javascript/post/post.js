@@ -1,0 +1,1 @@
+function KeyUP(e){var t=e.value.length+"/"+("title"===e.id?30:1200)+"文字";document.getElementById("of"+e.id).textContent=t}function send(){var e=new XMLHttpRequest;e.open("POST","/post/final"),e.onload=function(e){e.target.responseXML,console.log(e.target.responseXML.title)},e.responseType="document",e.send()}
